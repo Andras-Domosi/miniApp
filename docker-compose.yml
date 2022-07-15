@@ -9,7 +9,7 @@ services:
         - "pm-buli-network"
         ports:
         - "8080:80"
-        scale: 4
+        scale: 2
     backend:
        build: ./server
        ports:
