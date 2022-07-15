@@ -1,0 +1,19 @@
+version: "3.8"
+services: 
+    frontend:
+        image:
+            nginx:1.23.0-alpine
+        volumes:
+        - "./frontend:/usr/share/nginx/html:ro"
+        networks:
+        - "pm-buli-network"
+        ports:
+        - "8080:80"
+    backend:
+       build: ./server
+       ports:
+       - "3000:3000"
+       networks:
+       - "pm-buli-network"
+networks:
+    pm-buli-network:
